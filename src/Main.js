@@ -44,6 +44,7 @@ export class Main extends Component {
 const styles = {
     container: {
       width: '100%',
+      marginTop: '5%',
       flex: 1
     }
   };
