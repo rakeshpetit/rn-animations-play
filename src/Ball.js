@@ -3,15 +3,17 @@ import { Animated, View } from "react-native";
 
 export class Ball extends Component {
   componentWillMount() {
+    console.log(this.props);
+    const {x, y} = this.props.val;
     this.position = new Animated.ValueXY(0, 0);
     Animated.spring(this.position, {
-      toValue: { x: 150, y: 240 }
+      toValue: { x, y }
     }).start();
   }
   render() {
     return (
       <Animated.View style={this.position.getLayout()}>
-        <View style={styles.ball} />
+        <View style={[styles.ball, {borderColor: this.props.color}]} />
       </Animated.View>
     );
   }
