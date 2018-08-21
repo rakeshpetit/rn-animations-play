@@ -28,14 +28,16 @@ export class Main extends Component {
   }
   render() {
     return (
-      <View style={styles.container}>
-        {/* <Ball color="red" val={{x: 150, y: 450}}/>
+      // <View style={styles.container}>
+      //   <Deck data={DATA} renderCard={this.renderCard} />
+      // </View>
+      <View>
+        <Ball color="red" val={{x: 150, y: 450}}/>
         <Ball color="blue" val={{x: 150, y: 100}}/>
         <Ball color="green" val={{x: 150, y: -150}}/>
         <Ball color="yellow" val={{x: -150, y: 0}}/>
         <Ball color="cyan" val={{x: -150, y: 200}}/>
-        <Ball val={{x: -150, y: -350}}/> */}
-        <Deck data={DATA} renderCard={this.renderCard} />
+        <Ball val={{x: -150, y: -350}}/>
       </View>
     );
   }

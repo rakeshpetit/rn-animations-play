@@ -1,14 +1,26 @@
 import React, { Component } from "react";
 import { Animated, View } from "react-native";
 
+const duration = 1000;
+
 export class Ball extends Component {
   componentWillMount() {
     console.log(this.props);
     const {x, y} = this.props.val;
     this.position = new Animated.ValueXY(0, 0);
-    Animated.spring(this.position, {
-      toValue: { x, y }
-    }).start();
+    Animated.timing(this.position, {
+      toValue: { x, y },
+      duration
+    }).start(() => {
+
+      Animated.timing(this.position, {
+        toValue: { x: 0, y: 0 },
+        duration
+      }).start();
+
+    });
+
+    
   }
   render() {
     return (
